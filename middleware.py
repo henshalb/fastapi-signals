@@ -3,7 +3,7 @@ from starlette.requests import Request
 from starlette.middleware.base import BaseHTTPMiddleware, DispatchFunction, RequestResponseEndpoint
 from starlette.types import ASGIApp
 from typing import Callable
-from fastapi import Response
+from starlette import Response
 
 
 class SignalMiddleware(BaseHTTPMiddleware):
