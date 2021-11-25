@@ -1,2 +1,2 @@
-from .main import signal
-from .main import initiate_signal
+from src.main import signal
+from src.main import initiate_signal
