@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
     name='fastapi-signals',
-    packages=['fastapi-signals'],
+    packages=['fastapi_signals'],
     version='0.1',
     license='MIT',
     description='Signalling for FastAPI.',
