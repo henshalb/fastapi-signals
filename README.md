@@ -6,14 +6,15 @@ Signalling for FastAPI.
 - https://spectrum.chat/ariadne/general/how-to-use-background-tasks-with-starlette~74d56970-5676-4484-8586-a9384e5f4d56
 - https://github.com/encode/starlette/issues/436
 
-# usage
-### add middleware
+# Usage
+### Add middleware
 ```
 from fastapi_signals import SignalMiddleware, signal
 app = FastAPI()
 app.add_midleware(SignalMiddleware, handler=signal)
 ```
-### add handler
+### Add handler
+Specify how the fired signal should work.
 ```
 from fastapi_signals import signal
 import asyncio
@@ -23,7 +24,8 @@ async def handler():
     asyncio.sleep(3)
     print('Heyy, it works!')
 ```
-### fire signal in function
+### Fire signal in function
+Note that only one signal call is allowed using backgroud task.
 ```
 from fastapi_signals import initiate_signal
 @app.get("/")
