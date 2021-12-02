@@ -43,14 +43,13 @@ app = FastAPI()
 app.add_midleware(TaskMiddleware)
 ```
 ### Write handler
-Specify how the fired signal should work.
+Specify how the fired task should work.
 ```
 async def handler():
     await asyncio.sleep(3)
     print('Heyy, it works!')
 ```
-### Fire signal in function
-Note that only one signal call is allowed using backgroud task.
+### Fire task in function
 ```
 from fastapi_signals import initiate_task
 @app.get("/")
