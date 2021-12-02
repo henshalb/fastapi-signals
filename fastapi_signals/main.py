@@ -40,4 +40,4 @@ async def initiate_task(
         obj (Callable): function object
         args, kwargs: function arguments
     """
-    return task.add_task(obj, *args, **kwargs)
+    return await task.add_task(obj, *args, **kwargs)
