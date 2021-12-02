@@ -31,3 +31,9 @@ async def endpoint(request):
     await initiate_signal('handler',some_data="value")
     return {"status":"Success"}
 ```
+
+#### package
+```
+python setup.py sdist
+twine upload dist/*
+```
