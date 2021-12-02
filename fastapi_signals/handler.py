@@ -7,7 +7,7 @@ queue = asyncio.Queue()
 class SignalHandler:
 
     """
-    Decorator hybrid on call collects all handlers on start of server.
+    Decorator on call collects all handlers on start of server.
     All handlers are collected to registry.
     """
 
