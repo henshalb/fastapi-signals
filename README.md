@@ -6,7 +6,8 @@ Signalling for FastAPI.
 - https://spectrum.chat/ariadne/general/how-to-use-background-tasks-with-starlette~74d56970-5676-4484-8586-a9384e5f4d56
 - https://github.com/encode/starlette/issues/436
 
-# Usage
+# Usage - SignalMiddleware
+NB: Only one signal per function, must take request object
 ### Add middleware
 ```
 from fastapi_signals import SignalMiddleware, signal
@@ -21,7 +22,7 @@ import asyncio
 
 @signal.register
 async def handler():
-    asyncio.sleep(3)
+    await asyncio.sleep(3)
     print('Heyy, it works!')
 ```
 ### Fire signal in function
@@ -31,5 +32,29 @@ from fastapi_signals import initiate_signal
 @app.get("/")
 async def endpoint(request):
     await initiate_signal('handler',some_data="value")
+    return {"status":"Success"}
+```
+# Usage - TaskMiddleware
+Any number of tasks, no request object needed.
+### Add middleware
+```
+from fastapi_signals import TaskMiddleware
+app = FastAPI()
+app.add_midleware(TaskMiddleware)
+```
+### Write handler
+Specify how the fired signal should work.
+```
+async def handler():
+    await asyncio.sleep(3)
+    print('Heyy, it works!')
+```
+### Fire signal in function
+Note that only one signal call is allowed using backgroud task.
+```
+from fastapi_signals import initiate_task
+@app.get("/")
+async def endpoint():
+    await initiate_task(handler,some_data="value")
     return {"status":"Success"}
 ```
