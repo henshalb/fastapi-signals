@@ -1,5 +1,5 @@
 # fastapi-signals
-Signalling for FastAPI.
+Signalling for FastAPI. Run background task without hurting the function. fastapi-signals is trying not to work like Django Signals. Instead, it tries to stay as a background task runner. 
 
 # Usage - SignalMiddleware
 NB: Only one signal per function, must take request object
