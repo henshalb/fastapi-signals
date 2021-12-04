@@ -2,7 +2,7 @@ from setuptools import setup
 setup(
     name='fastapi-signals',
     packages=['fastapi_signals'],
-    version='0.1.0',
+    version='0.1.1',
     license='MIT',
     description='Signalling for FastAPI.',
     long_description="""# fastapi-signals
@@ -63,7 +63,7 @@ async def endpoint():
     author='Henshal B',
     author_email='henshalb@gmail.com',
     url='https://github.com/henshalb/fastapi-signals.git',
-    download_url='https://github.com/henshalb/fastapi-signals/archive/refs/tags/0.1.0.tar.gz',
+    download_url='https://github.com/henshalb/fastapi-signals/archive/refs/tags/v0.1.1.tar.gz',
     keywords=['fastapi', 'signals', 'fastapi-signals', 'background task'],
     install_requires=[
         'starlette',
