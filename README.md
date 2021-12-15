@@ -1,4 +1,5 @@
 # fastapi-signals
+[![Downloads](https://static.pepy.tech/personalized-badge/fastapi-signals?period=month&units=international_system&left_color=brightgreen&right_color=red&left_text=Downloads)](https://pepy.tech/project/fastapi-signals)
 Signalling for FastAPI. Run background task without hurting the function. fastapi-signals is trying not to work like Django Signals. Instead, it tries to stay as a background task runner. Mostly similiar to Celery, but feathery.
 
 # Usage - SignalMiddleware
