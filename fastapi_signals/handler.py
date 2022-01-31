@@ -77,6 +77,7 @@ class TaskHandler:
 
     async def runner(self, *args, **kwargs):
         """Open loop to execute every queue updates"""
+        await asyncio.sleep(1)
         while True:
             function_object = await queue.get()
             await function_object(*args, **kwargs)
