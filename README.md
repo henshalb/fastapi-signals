@@ -17,7 +17,8 @@ from fastapi_signals import signal
 import asyncio
 
 @signal.register
-async def handler():
+async def handler(**kwargs):
+    print(kwargs)
     await asyncio.sleep(3)
     print('Heyy, it works!')
 ```
@@ -26,8 +27,8 @@ Note that only one signal call is allowed using backgroud task.
 ```
 from fastapi_signals import initiate_signal
 @app.get("/")
-async def endpoint(request):
-    await initiate_signal('handler',some_data="value")
+async def endpoint(request: Request):
+    await initiate_signal(request, 'handler',some_data="value")
     return {"status":"Success"}
 ```
 # Usage - TaskMiddleware
