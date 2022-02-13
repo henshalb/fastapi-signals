@@ -18,8 +18,8 @@ import asyncio
 
 @signal.register
 async def handler(**kwargs):
-    print(kwargs)
     await asyncio.sleep(3)
+    print(kwargs)
     print('Heyy, it works!')
 ```
 ### Fire signal in function
